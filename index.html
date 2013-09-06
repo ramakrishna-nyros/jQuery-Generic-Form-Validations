@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+		<head>
+		<meta charset="utf-8">
+		<title>Registration Form</title>
+		
+		<link rel="stylesheet" href="css/account.css" type="text/css"/>
+		<script type="text/javascript"  src="js/jquery-1.10.2.js"></script>
+		
+		<script type="text/javascript"  src="jS/account.js" ></script>
+		<script type="text/javascript">
+		//window.onbeforeunload = function (){return '';}
+		$(document).ready(function()
+		{
+		$("#myform").submit(function(){
+		var bar=0;
+		var rad=$("#myform").prop("gen");
+		var check=$("#myform").prop("hobbies");
+		if($.fn.emptyField(uname,"Please enter username") && $.fn.startWith(uname,"Username must start with alphabet") && $.fn.minLen(uname,"Username atleast contain  5 characters",5) && $.fn.alphaNumeric(uname,"Please enter alphanumerics only"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.emptyField(pwd,"Please enter password ") && $.fn.minLen(pwd,"Password atleast contain  4 characters",4) && $.fn.alphaNumeric(pwd,"Please enter alphanumerics only"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.emptyField(fname,"Please enter first name") && $.fn.minLen(fname,"First name atleast contain  2 characters",2) && $.fn.alphabet(fname,"Please enter alphabets only"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.emptyField(lname,"Please enter last name") && $.fn.minLen(lname,"Last name atleast contain  2 characters",2) && $.fn.alphabet(lname,"Please enter alphabets only"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.emptyField(pic,"Please upload your image") && $.fn.fileType(pic,"Upload .jpg,.png,.gif images only"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.radCheckValid(rad,"Please select your gender"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.mulSelvalid(day,"Please select day of DOB"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.mulSelvalid(month,"Please select month of DOB"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.mulSelvalid(year,"Please select year of DOB"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.mulCheckValid(check,"Please select your hobbies"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.mulSelvalid(country,"Please select your country"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.emptyField(phno,"Please enter your phone number") && $.fn.phoneNum(phno,"Enter valid phone number"))
+		{
+		bar=bar+8;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		if($.fn.emptyField(email,"Please enter your email") && $.fn.emailFormat(email,"Enter valid email"))
+		{
+		bar=bar+4;
+		$("#progress").css("width",bar+"%");
+		$("#progress").text(bar+"%");
+		$("#success").css("display","block");
+		 return false;
+		 }}}}}}}}}}}}}
+			
+		return false;
+		});
+		});
+		</script>
+		</head>
+<body>
+  <div id="main">
+		<div id="meter">
+		<div id="progress">0%</div>
+		
+		</div>
+		<div id="success">
+			<h3>Well done! You successfully read this important alert message</h3>
+		</div>
+				
+		<div id="heading">
+			<h1>Account Form:</h1>
+		</div>
+				
+		<div id="content" class="form-content">
+			
+		  <form id="myform" name="myform" onsubmit="return validate()" action="" enctype="multipart/form-data" method="post">
+			<fieldset>
+				<legend>Account Information</legend>
+				<div class="border"></div><br>
+				
+				<label>Username<sup>*</sup></label>
+				<input type="text" id="uname" name="uname" maxlength="8"/><br><br>
+				
+				<label>Password<sup>*</sup></label>
+				<input type="password" id="pwd" name="pwd"  maxlength="6"/><br><br>
+				
+				<legend>Profile Information</legend>
+				<div class="border"></div><br>
+				
+				<label>First Name<sup>*</sup></label>
+				<input type="text" id="fname" name="fname" maxlength="6"/><br><br>
+				
+				<label>Last Name<sup>*</sup></label>
+				<input type="text" id="lname" name="lname" maxlength="15"/><br><br>
+				
+				<label>Profile Pic<sup>*</sup></label>
+				<input type="file"  accept="image/*" id="pic" name="pic" ><br><br>
+				
+				<label>Gender<sup>*</sup></label>
+				<input type="radio" id="g1 " name="gen" value="male" />Male<br>
+				<input type="radio" id="g2" name="gen" value="female" />Female<br/><br/>
+				
+				<label>Date of Birth<sup>*</sup></label>
+				<select id="day" name="day" >
+								<option selected >Select day</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+								</select>
+				<select id="month" name="month">
+								<option selected>Select month</option>
+								<option>January</option>
+								<option>February</option>
+								<option>March</option>
+								<option>April</option>
+								<option>May</option>
+								<option>June</option>
+								<option>July</option>
+								<option>August</option>
+								<option>September</option>
+								<option>October</option>
+								<option>November</option>
+								<option>December</option>
+								</select>
+				<select id="year" name="year">
+								<option selected>Select year</option>
+								<option>1985</option>
+								<option>1986</option>
+								<option>1987</option>
+								<option>1988</option>
+								<option>1989</option>
+								<option>1990</option>
+								<option>1991</option>
+								<option>1992</option>
+								<option>1993</option>
+								<option>1994</option>
+								<option>1995</option>
+								</select><br><br>
+								
+				<label>Hobbies<sup>*</sup></label>
+				<input type="checkbox" id="h1" name="hobbies" value="Painting">Painting
+				<input type="checkbox" id="h2" name="hobbies" value="Singing" >Singing
+				<input type="checkbox" id="h3" name="hobbies" value="Traveling" >Traveling
+				<input type="checkbox" id="h4" name="hobbies" value="Dancing" >Dancing
+				<input type="checkbox" id="h5" name="hobbies" value="Gaedening" >Gardening
+				<input type="checkbox" id="h6" name="hobbies" value="Others" >Others<br><br>
+				
+				
+				<label>Have been to<sup>*</sup></label>
+				<select id="country" name="country">
+							<option value="" selected="selected">Select Country</option>
+							<option value="United States">United States</option>
+							<option value="United Kingdom">United Kingdom</option>
+							<option value="Afghanistan">Afghanistan</option> 
+							<option value="Albania">Albania</option>
+							<option value="Algeria">Algeria</option>
+							<option value="Antarctica">Antarctica</option>
+							<option value="Argentina">Argentina</option>
+							<option value="China">China</option>
+							<option value="Hungary">Hungary</option>
+							<option value="Iceland">Iceland</option>
+							<option value="India">India</option>
+							<option value="Indonesia">Indonesia</option>
+							<option value="Iraq">Iraq</option>
+							<option value="Ireland">Ireland</option>
+							<option value="Israel">Israel</option>
+							<option value="Italy">Italy</option>
+							<option value="Jamaica">Jamaica</option>
+							<option value="Japan">Japan</option>
+							<option value="Zimbabwe">Zimbabwe</option>
+				</select><br/><br/>
+				
+				<legend>Contact Information</legend>
+				<div class="border"></div><br/>
+				<label>Phone<sup>*</sup></label>
+				<input type="text" id="phno" name="phno" maxlength="20"
+				placeholder="Format +91 (970)-789-9090" /><br><br>
+				
+				<label>Email<sup>*</sup></label>
+				<input type="text" id="email" name="email"/><br>
+				
+				<input type="submit" value="SUBMIT"/>
+				
+			</fieldset>
+		</form>
+	  </div>		
+    </div>
+   </body>
+</html>
